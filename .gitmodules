@@ -1,0 +1,9 @@
+[submodule "editor"]
+	path = editor
+	url = https://github.com/Pixore/editor
+[submodule "api"]
+	path = api
+	url = https://github.com/Pixore/api
+[submodule "website"]
+	path = website
+	url = https://github.com/Pixore/website
