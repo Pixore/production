@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+  nginx:
+    image: nginx
+    links:
+      - website
+      - api
+      - editor
+    ports:
+      - "80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+  api:
+    image: node
+    volumes:
+      - ./api/:/app/
+    working_dir: /app/
+    command: npm start
+    ports:
+      - "80"
+    links:
+      - mongodb
+  editor:
+    image: node
+    volumes:
+      - ./editor/:/app/
+    working_dir: /app/
+    environment:
+      - PIXORE_PATH=editor
+    command: npm start
+    ports:
+      - "80"
+  website:
+    image: node
+    volumes:
+      - ./website/:/app/
+    working_dir: /app/
+    command: npm start
+    ports:
+      - "80"
+  mongodb:
+    image: mongo
+    expose:
+      - "80"
+    volumes:
+      - /data/db
