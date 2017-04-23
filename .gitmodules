@@ -1,9 +1,12 @@
 [submodule "editor"]
 	path = editor
 	url = https://github.com/Pixore/editor
+	branch = master
 [submodule "api"]
 	path = api
 	url = https://github.com/Pixore/api
+	branch = master
 [submodule "website"]
 	path = website
 	url = https://github.com/Pixore/website
+	branch = master
